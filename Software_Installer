@@ -1,0 +1,85 @@
+@ECHO off
+cls
+:start
+cls
+ECHO. #####################################
+ECHO. ###### Instalador de Programas ######
+ECHO. #####################################
+ECHO 1. Instalar Sismama
+ECHO 2. Instalar Java Update 43
+ECHO 3. Instalar Arya
+ECHO 4. Instalar Suite
+ECHO 5. Instalar Gerenciador Pixeon
+ECHO 6. Instalar Adobe Reader X
+ECHO 7. Instalar Winrar 64bits
+
+ECHO 0. Cancelar
+echo.
+ECHO Digite o numero abaixo.
+Echo.
+set /p choice=Numero =  
+if '%choice%' == '1' goto sismama
+if '%choice%' == '2' goto java
+if '%choice%' == '3' goto arya
+if '%choice%' == '4' goto suite
+if '%choice%' == '5' goto pixeon
+if '%choice%' == '6' goto adobe
+if '%choice%' == '7' goto winrar
+if '%choice%' == '0' goto end
+if '%choice%' != '0' || '%choice%' != '1' || '%choice%' != '2' || '%choice%' != '3' || '%choice%' != '4' || '%choice%' != '5' ||
+   '%choice%' != '6' || '%choice%' != '7' goto start
+
+
+:sismama
+call "\\10.16.1.16\Suporte\SisMama 4.18\SetupMama.exe"
+echo.
+echo.
+echo.
+pause
+goto start
+
+:java
+call "\\10.16.1.16\Suporte\Java\JAVA 6 UPDATE 43.exe"
+echo.
+echo.
+echo.
+pause
+goto start
+
+:arya
+start iexplore.exe "com.pixeon.launch://10.16.1.7:80/arya"
+echo.
+echo.
+pause
+goto start
+
+:suite
+start iexplore.exe "com.pixeon.launch://10.16.1.7:80/suite"
+echo.
+echo.
+pause
+goto start
+
+:pixeon
+start iexplore.exe "http://10.16.1.7/"
+echo.
+echo.
+pause
+goto start
+
+:adobe
+call "\\10.16.1.16\Suporte\Adobe Reader X (pt-br).exe"
+echo.
+echo.
+pause
+goto start
+
+:winrar
+call "\\10.16.1.16\Suporte\winrar-x64-571br.exe"
+echo.
+echo.
+pause
+goto start
+
+:end
+end
